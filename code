@@ -1,4 +1,66 @@
+public class ProductoGeek {
+    protected String codigo;
+    protected String nombre;
+    protected double precioBase;
+
+    public ProductoGeek(String codigo, String nombre, double precioBase) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precioBase = precioBase;
+    }
+
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getPrecioBase() {
+        return this.precioBase;
+    }
+
+    public void setPrecioBase(double precioBase) {
+        this.precioBase = precioBase;
+    }
+}
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+public class Comic extends ProductoGeek{
+    private int numeroTomo;
+
+    public Comic(String codigo, String nombre, double precioBase, int numeroTomo) {
+        super(codigo, nombre, precioBase);
+        this.numeroTomo = numeroTomo;
+    }
+    public int getNumeroTomo() {
+        return this.numeroTomo;
+    }
+
+    public void setNumeroTomo(int numeroTomo) {
+        this.numeroTomo = numeroTomo;
+    }
+}
+
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class Main {
+    public static void main(String[] args){
+        Comic comic = new Comic("01","CHOUJIN X", 12600, 9);
+
+        System.out.println("Nombre: " + comic.getNombre());
+        System.out.println("Precio: $" + comic.getPrecioBase());
+        
+        System.out.println("Tomo N°: " + comic.getNumeroTomo());
+    }
+}
